@@ -1,0 +1,13 @@
+#=======================================================================
+# Makefrag for rv64uzcmt tests
+#-----------------------------------------------------------------------
+
+rv64uzcmp_sc_tests = \
+    cm_jt \
+    cm_jalt
+
+rv64uzcmt_p_tests = $(addprefix rv64uzcmt-p-, $(rv64uzcmt_sc_tests))
+rv64uzcmt_v_tests = $(addprefix rv64uzcmt-v-, $(rv64uzcmt_sc_tests))
+rv64uzcmt_ps_tests = $(addprefix rv64uzcmt-ps-, $(rv64uzcmt_sc_tests))
+
+spike_tests += $(rv64uzcmt_p_tests) $(rv64uzcmt_v_tests)

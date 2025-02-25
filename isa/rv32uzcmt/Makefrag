@@ -1,0 +1,13 @@
+#=======================================================================
+# Makefrag for rv32uzbs tests
+#-----------------------------------------------------------------------
+
+rv32uzcmp_sc_tests = \
+    cm_jt \
+    cm_jalt
+
+rv32uzcmt_p_tests = $(addprefix rv32uzcmt-p-, $(rv32uzcmt_sc_tests))
+rv32uzcmt_v_tests = $(addprefix rv32uzcmt-v-, $(rv32uzcmt_sc_tests))
+rv32uzcmt_ps_tests = $(addprefix rv32uzcmt-ps-, $(rv32uzcmt_sc_tests))
+
+spike_tests += $(rv32uzcmt_p_tests) $(rv32uzcmt_v_tests)
