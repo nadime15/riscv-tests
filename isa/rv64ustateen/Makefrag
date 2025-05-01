@@ -1,0 +1,11 @@
+#=======================================================================
+# Makefrag for rv64 ssstateen and smstateen tests
+#-----------------------------------------------------------------------
+
+rv64ustateen_sc_tests = \
+	state \
+
+rv64ustateen_p_tests = $(addprefix rv64ustateen-p-, $(rv64ustateen_sc_tests))
+rv64ustateen_v_tests = $(addprefix rv64ustateen-v-, $(rv64ustateen_sc_tests))
+
+spike_tests += $(rv64ustateen_p_tests) $(rv64ustateen_v_tests)
